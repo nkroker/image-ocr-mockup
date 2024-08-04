@@ -6,9 +6,10 @@ export const uploadFile = async (blob, fileName) => {
     const formData = new FormData();
     formData.append('file', blob, fileName);
 
-    const response = await axios.post('https://webhook.site/d5d5c199-2681-4f91-b337-93b2ed2a4192', formData, {
+    const response = await axios.post('/dashboard', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
+        "X-CSRF-Token": document.querySelector("meta[name='csrf-token']").content,
       },
     });
 
