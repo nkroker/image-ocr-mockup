@@ -25,7 +25,7 @@ const LeftPanel = (props) => {
       const blobUrl = URL.createObjectURL(blob);
       props.onBlobUrlChange(blobUrl);
       uploadFile(blob, file.name).then(response => {
-        props.onApiResponseChange(response);
+        props.onApiResponseChange(response.data.data.result);
       });
     };
   };

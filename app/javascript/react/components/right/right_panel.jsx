@@ -6,16 +6,18 @@ function RightPanel({ blobUrl, apiResponse }) {
   return (
     <>
       <div className="col-sm-12">
-        {blobUrl && (
-          <div className="col-sm-6">
-            <h4>Preview</h4>
-            <img src={blobUrl} style={{ width: '100%' }} />
-          </div>
-        )}
+        <div className="col-sm-4">
+          {blobUrl && (
+            <span>
+              <h4>Preview</h4>
+              <img src={blobUrl} style={{ width: '100%' }} />
+            </span>
+          )}
+        </div>
         {apiResponse && (
           <div className="col-sm-6">
             <h4>API Response</h4>
-            <pre>{JSON.stringify(apiResponse, null, 2)}</pre>
+            <pre>{ apiResponse }</pre>
           </div>
         )}
       </div>
