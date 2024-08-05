@@ -12,7 +12,19 @@ const LeftPanel = (props) => {
     handleFileChange(file);
   }, [props]);
 
+  const validateFile = (file) => {
+    if (file.type.startsWith('image/')) {
+      return true;
+    } else {
+      alert('Please select an image file.');
+      return false;
+    }
+  }
+
   const handleFileChange = (file) => {
+    if (!validateFile(file)) {
+      return;
+    }
     setSelectedFile(file);
     let blob;
 
@@ -49,7 +61,13 @@ const LeftPanel = (props) => {
           <input {...getInputProps()} id="file-tag" style={{ display: 'none' }} onChange={onFileChange} />
           {
             isDragActive ?
-              <p>Drop the files here ...</p> :
+              <div>
+                <p>Drop the files here ...</p>
+                <span className="material-symbols-outlined" style={{ fontSize: '180px' }} onClick={clickFileTag}>
+                  upload
+                </span>
+              </div>
+            :
               <div>
                 <span className="material-symbols-outlined" style={{ fontSize: '180px' }} onClick={clickFileTag}>
                   upload

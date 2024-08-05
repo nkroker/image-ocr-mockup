@@ -13,6 +13,7 @@ export const uploadFile = async (blob, fileName) => {
       },
     });
   } catch (error) {
+    alert('Something went wrong');
     console.error('Error uploading file:', error);
   }
 };

@@ -35,5 +35,9 @@ I've added make to simplify the process command description is
   - `make install`
   - `make run`
 
+#### Steps to test
+  - Test images are present in the directory called `test-images`
+  - Use them to test the response.
+
 After running launch
   [localhost](http://0.0.0.0:3000)
