@@ -24,7 +24,9 @@ const Dashboard = () => {
       <Navband/>
       <div className='container mt-5'>
         <LeftPanel onBlobUrlChange={handleBlobUrlChange} onApiResponseChange={handleApiResponseChange} />
+        <br />
         <hr />
+        <br />
         <RightPanel blobUrl={blobUrl} apiResponse={apiResponse} />
       </div>
     </div>
